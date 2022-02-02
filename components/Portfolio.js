@@ -1,11 +1,45 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import {BsThreeDotsVertical} from 'react-icons/bs'
 import { coins } from '../static/coins';
 import Coin from './Coin';
 import BalanceChart from "./BalanceChart";
 
-const Portfolio = () =>{
+
+const Portfolio = ({thirdWebTokens, sanityTokens, walletAddress}) =>{
+    // console.log(thirdWebTokens, "from portfolio")
+    // thirdWebTokens[2]
+    //   .balanceOf(walletAddress)
+    //   .then(balance => console.log(Number(balance.displayValue) * 3100))
+
+
+
+    // convert all of my tokens to tk
+    const [walletBalance, setWalletBalance] = useState(0)
+    const tokentoBDT = {};
+    for (const token of sanityTokens){
+        tokentoBDT[token.contractAddress] = Number(token.bdtPrice)
+    }
+    
+    useEffect(() => {
+        const calculateTotalBalance = async () =>{
+            const totalBalance = await Promise.all(
+                thirdWebTokens.map(async token =>{
+                    const balance = await token.balanceOf(walletAddress);
+                    return (
+                        Number(balance.displayValue) * tokentoBDT[token.address]
+                    );
+                })
+            )
+            // console.log('Total Balance: ', totalBalance)
+            setWalletBalance(totalBalance.reduce((acc, curr) => acc + curr, 0))
+            // setWalletBalance(total)
+        }
+        return calculateTotalBalance()
+    }, [thirdWebTokens, sanityTokens])
+
+    // calculateTotalBalance()
+
     return (
     <Wrapper>
         <Content>
@@ -14,9 +48,8 @@ const Portfolio = () =>{
                 <Balance>
                     <BalanceTitle>Portfolio Balance</BalanceTitle>
                     <BalanceValue>
-                        {'$'}
-                        {/* {walletBalance.tolocaleString()} */}
-                        46,000
+                        {'৳'}
+                        {walletBalance.toLocaleString()}
                     </BalanceValue>
                 </Balance>
             </div>

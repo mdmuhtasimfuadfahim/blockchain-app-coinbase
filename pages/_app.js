@@ -1,6 +1,7 @@
 import '../styles/globals.css';
 import { ThirdwebProvider } from '@3rdweb/react';
 
+
 const supportedChainIds = [4];
 const connectors = {
   injected: {},
