@@ -7,6 +7,10 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "engines": {
+    "npm": "^8.3.1",
+    "node": "^17.4.0"
+  },
   "dependencies": {
     "@3rdweb/hooks": "^1.9.2",
     "@3rdweb/react": "^1.9.3",
