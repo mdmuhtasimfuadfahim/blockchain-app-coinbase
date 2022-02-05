@@ -45,7 +45,7 @@ const CoinItem = ({
     }}
     onClick={() =>{
         setSelectedToken(token)
-        setAction('send')
+        setAction('buy')
     }}
     >
         <Main>

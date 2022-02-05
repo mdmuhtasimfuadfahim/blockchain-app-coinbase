@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 import { useRouter } from 'next/router';
 import TransferModal from './modal/TransferModal';
 import Link from 'next/link';
+import TradeModal from './modal_2/TradeModal';
 
 Modal.setAppElement('#__next')
 
@@ -44,13 +45,25 @@ const Header = ({walletAddress, sanityTokens, thirdWebTokens, connectWallet}) =>
                         Connect Wallet
                     </Button>
                 )}
-                <Button style={{backgroundColor: '#3773f5', color: '#000'}}>
-                   Buy / Sell
-                </Button>
+                <Link href={'/?trade=1'} 
+                   style={{backgroundColor: '#3773f5', color: '#000'}}
+                   >
+                   <Button>Buy / Sell</Button>
+                </Link>
                 <Link href={'/?transfer=1'}>
                    <Button> Send / Receive </Button>
                 </Link>
             </ButtonsContainer>
+            <Modal
+            isOpen={!! router.query.trade}
+            onRequestClose={() => router.push('/')}
+            style={customStyles}
+            >
+                <TradeModal sanityTokens={sanityTokens}
+                 thirdWebTokens={thirdWebTokens}
+                 walletAddress={walletAddress}
+                />
+            </Modal>
             <Modal
             isOpen={!! router.query.transfer}
             onRequestClose={() => router.push('/')}
@@ -89,6 +102,7 @@ const ButtonsContainer = styled.div`
 
 const Button = styled.div`
  border: 1px solid #282b2f;
+ border-radius: 0.5rem;
  padding: 0.8rem;
  font-size: 1.3rem;
  font-weight: 500;

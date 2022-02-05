@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import Header from '../components/header';
+import Header from '../components/Header';
 import Main from '../components/Main';
 import Sidebar from '../components/Sidebar';
 import { ThirdwebSDK } from "@3rdweb/sdk";
