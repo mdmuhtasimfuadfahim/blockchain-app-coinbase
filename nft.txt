@@ -1,0 +1,7 @@
+*[_type == 'coins']{
+  name,
+  bdtPrice,
+  contractAddress,
+  symbol,
+  logo
+}
