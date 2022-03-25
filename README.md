@@ -2,7 +2,18 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First, clone the repo by:
+
+```
+git clone https://github.com/mdmuhtasimfuadfahim/blockchain-app-coinbase
+```
+Second, download all the dependencies by:
+```
+npm install 
+# or
+yarn install
+```
+Third, run the development server:
 
 ```bash
 npm run dev
@@ -32,3 +43,21 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Live Demo
+
+  - [https://my-coinbase-blockchain.vercel.app/](https://my-coinbase-blockchain.vercel.app/)
+ 
+## Technology Stack and Tools
+
+  - [NodeJS - 17.4.0 / above versions](https://nodejs.org/en/)
+  - [Sanity.IO](https://www.sanity.io/)
+  - [Thirdweb](https://thirdweb.com/)
+  - [MetaMask](https://metamask.io/)
+  
+  ## Contribution
+  
+  Please feel free to contibute anything or please feel free to contact me for any update. For major changes please contact with me.
+  
+  #### Thank you
+ 
