@@ -50,7 +50,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
  
 ## Technology Stack and Tools
 
-  - [NodeJS - 17.4.0 / above versions](https://nodejs.org/en/)
+  - [NodeJS - 17.4.0](https://nodejs.org/en/) / above versions
   - [Sanity.IO](https://www.sanity.io/)
   - [Thirdweb](https://thirdweb.com/)
   - [MetaMask](https://metamask.io/)
